@@ -65,12 +65,10 @@ wherein "A0" is a pin that I use. Arduino has a registrador of 8 bits, which con
  >BYTE *mid = malloc(nt * sizeof(float));
  
  
-And in each chunks of memory I stored a sample data temperature:
-mid[1] = T(1) ; mid[1] = T(1) ; ... ; mid[nt] = T(nt). See a code:
-![graph](prg_readme.png)
+And in each chunks of memory I stored a sample data temperature: mid[1] = T(1); mid[1] = T(1); ...; mid[nt] = T(nt). See:![graph](prg_readme.png)
 
 
-Now, I'll sum every floats in chunks to get an average. See the result below, wherein I compare two graphics: without average and with avarege.  ![graph](gt2new.png)
+Now, I'll sum every floats in chunks to get an average. The result, wherein I compare two graphics:without and with avarege.![graph](gt2new.png)
 
 
 #### Sound velocity:
