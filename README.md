@@ -1,23 +1,21 @@
 # Water ++
-W ++ is a software and hardware system that allows you smartly to manage tank of liquids. In this context, my final project have three functionalities.
+W ++ is a software and hardware system that allows you to manage smartly a tank of liquids. In this context, my final project contains three functionalities:
+- Calculates, anytime, as precise as possible, using statistics, how much water contains in a tank.
 
-- Calculate, anytime, how much water contain in tank using statistics to determinate more precise possible.
+- Calculates and manages how much water do you spend per day using graphics and controls the flux of water.
 
-- Calculate and manage how much water you spend day by day using graphics and getting control flux water.
-
-- Identifies leakage and water loss caused by it.
+- Identifies leakage and water loss caused in the tank.
 
 # Why this project is important?
 
-Because, mostly, we need solution for sustainable development, in this case, of water. We are in critical moment due COVID-19 and we must improve how to use water on 
-day by day because of social isolation that makes us stay longer at home and spend more and more water. Moreover, propose by ONU, implementation of integrated water resources management by 2030 is goal 6:
-
->sustainable development goal 6.
+Mostly because we need solutions for sustainable developments projects. In this case, about water. Due to COVID-19, we are in a critical moment and we must improve how to use water daily, since social distancing is making us stay longer at home and, hence, spending more water than usual.  
+Moreover, implementation of integrated water management resources is the objective 6 of 2030 United Nations agenda (The sustainable development agenda):
+>Sustainable development goal 6.
 
 In this goal, subitem 4:
->6.4 By 2030, substantially increase water-use efficiency across all sectors and ensure sustainable withdrawals and supply of freshwater to address water scarcity and substantially reduce the number of people suffering from water scarcity
+>6.4 By 2030, substantially increase water-use efficiency across all sectors and ensure sustainable withdrawals and supply of freshwater to address water scarcity and substantially reduce the number of people suffering from water scarcity.
 
-Therefore, it is essential that we have tecnologies tools for improve more and more way how we use water day after day.
+Therefore, it is essential to exist technologies tools to improve way how we use water daily.
 
 
 ![inf](inf1.png)
@@ -28,12 +26,12 @@ Therefore, it is essential that we have tecnologies tools for improve more and m
 
 
 ### Part 1: Hardware.
-- First, we need make a littlle circuit, à la below: ![circuit](circuit.png)
+- First, we need make a littlle circuit, as described below: ![circuit](circuit.png)
 
-- Second, we need write a code wich to get and set information anytime, because we have two sensors, wich must be queried, and have one relay module that must to set.
+- Second, we need to write a code to get and set information anytime, because we have two sensors, which must be queried, and one relay module, that must be set.
 
 
-- I use Arduino's IDE to code and hardware below:
+- I used Arduino's IDE to code and control hardware below:
 
 - [x] Arduino uno.
 - [x] Relay module.
@@ -43,47 +41,47 @@ Therefore, it is essential that we have tecnologies tools for improve more and m
 - [x] LM35 (Temperature).
 - [x] Jumpers.
 - [x] Sensor ultrassonic HC-SR04.
-- [x]  Protoboard.
+- [x] Protoboard.
 
 ### Part 2: Software.
-- First, I wrote a code wich read the LM35 and to calculate local temperature. In this context, we need to use: "analogRead(A0);"
-where "A0" is a pin which I use. Arduino have a registrador of 8 bits, then 1024 values of voltage
+- First, I wrote a code that reads the LM35 and calculates local temperature. In this context, we need to use "analogRead(A0);"
+wherein "A0" is a pin that I use. Arduino has a registrador of 8 bits, which contains 1024 values of voltage.
 
-- Second, I wrote a code which read the HC-SR04 and to calculate distance until "object", in this case, water columm.
+- Second, I wrote a code can read the HC-SR04 and calculate distance until "object", in this case, water column
 #### Step 1:
->Active trigger pin for emition pulse of sound.
+>Activate the trigger pin to emit a pulse of sound.
 #### Step 2:
->Active echo pin for get the return of the sound that was emitioned by trigger.
+>Activate echo pin for get the return of the sound emitioned by trigger.
 #### Step 3:
->The distance until object can be to calculate with this simple equation that depend of the sound velocity: distance = sound_velocity * time / 2 .
+>The distance until object can be calculated by this simple equation that depends on the sound velocity: distance = sound_velocity * time / 2 .
 
 #### CODE
 
 ### Part 3: Experimental error.
-- In this project I pretend that is so difficult meansure physical quantities like a temperature, distance and sound velocity in the air. Then, I use my recent newfound (Thanks CS50) to improve precision in each meansure. Let me go ahead and I show you some tricks that improve any measurements.
+- In this project, I believe that is difficult to meansure physical quantities like a temperature, distance and sound velocity in the air. Thereupon, I use my newfound (Thanks CS50) to improve the precision in each measure. Later I'll show you some tricks that improve any measurements.
 
 #### Avarege:
-- We will analising temperature but it is can be make for any sample data. First, I use a pointer:
+- We will analise the temperature, but this can be make for any sample data. First, I use a pointer:
  >BYTE *mid = malloc(nt * sizeof(float));
  
  
-and each chunks of memory I stored a sample data temperature:
+And in each chunks of memory I stored a sample data temperature:
 mid[1] = T(1) ; mid[1] = T(1) ; ... ; mid[nt] = T(nt). See a code:
 ![graph](prg_readme.png)
 
 
-Now, I sum every floats in chunks and set avarege. See the result below where I compare two graphics without avarege and with avarege:  ![graph](gt2new.png)
+Now, I'll sum every floats in chunks to get an average. See the result below, wherein I compare two graphics: without average and with avarege.  ![graph](gt2new.png)
 
 
 #### Sound velocity:
-- Now, I calculate sound velocity in the air using expression below:
+- Now, I can calculate sound velocity in the air using the expression below:
 
 ![graph](eq.png)
 
-Remember, the air is compose of 80% of N2 and 20% of O2. Then, M = 28.8 g/mol and gama = 7/5. Thus, we have: v = sqrt(T) * 20.086 (T in Kelvin).
+Remember, the air is composed by 80% of N2 and 20% of O2. Also, M = 28.8 g/mol and gama = 7/5. Thus, we have: v = sqrt(T) * 20.086 (T in Kelvin).
 
 #### Part 4: Graphics and data.
-- I use the Arduino for make file tab separete values in the monitor serial of the computer and finally, I plotted this data. See the results! 
+- I used the Arduino to make a file tab separate values in the computer and, finally, I plotted this data. See the results!
 
 ![graph](ggeralnew.png)
 ![graph](g1new.png)
