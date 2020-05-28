@@ -26,7 +26,7 @@ Therefore, it is essential to exist technologies tools to improve way how we use
 
 
 ### Part 1: Hardware.
-- First, we need make a littlle circuit, as described below: ![circuit](circuit.png)
+- First, we need make a littlle circuit, as described below: ![circuit](circuit.png) ![circuit](circuit2.jpeg)
 
 - Second, we need to write a code to get and set information anytime, because we have two sensors, which must be queried, and one relay module, that must be set.
 
