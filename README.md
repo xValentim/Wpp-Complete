@@ -55,7 +55,7 @@ wherein "A0" is a pin that I use. Arduino has a registrador of 8 bits, which con
 #### Step 3:
 >The distance until object can be calculated by this simple equation that depends on the sound velocity: distance = sound_velocity * time / 2 .
 
-(gt2new.png)
+![graph](dist.png)
 
 ### Part 3: Experimental error.
 - In this project, I believe that is difficult to meansure physical quantities like a temperature, distance and sound velocity in the air. Thereupon, I use my newfound (Thanks CS50) to improve the precision in each measure. Later I'll show you some tricks that improve any measurements.
@@ -86,3 +86,9 @@ Remember, the air is composed by 80% of N2 and 20% of O2. Also, M = 28.8 g/mol a
 ![graph](g3new.png)
 ![graph](g8new.png)
 ![graph](gd1new.png)
+![graph](g2old.png)
+![graph](g4new.png)
+![graph](g7new.png)
+![graph](gt1new.png)
+
+
